@@ -65,6 +65,71 @@
 
 <br>
 
+
+@if (StateContainer.foundUser)
+{
+
+    <h1 class="govuk-heading-xl">
+        TV licence fine details
+    </h1>
+
+    @if (StateContainer.foundUser && StateContainer.myFine.IsPaid == true)
+    {
+        <h1 class="govuk-heading-l3">This fine has already been paid.</h1>
+        <p>Summary of your TV fine details:</p>
+    }
+
+
+    <h1 class="govuk-heading-l2">
+        Fine amount:
+    </h1>
+
+    <div class="fineAmount">£@StateContainer.myFine.AmountDue</div>
+
+    <h2 class="govuk-heading-l2">
+        Fine issue date:
+    </h2>
+    <div class="fineDate">
+        @StateContainer.myFine.DateIssued
+    </div>
+
+    <h2 class="govuk-heading-l2">
+        Customer name:
+    </h2>
+
+    <div class="fineCustomerName">
+        @StateContainer.myFine.FullName
+    </div>
+
+    <h2 class="govuk-heading-l2">
+        Fine ID:
+    </h2>
+
+    <div class="fineID">
+        @StateContainer.myFine.FineID
+    </div>
+
+
+
+    /*
+    <ol>
+    <li>Fine ID: @StateContainer.myFine.FineID</li>
+    <li>Name: @StateContainer.myFine.FullName</li>
+    <li>Fine Amout: @StateContainer.myFine.AmountDue</li>
+    <li>Has the fine been paid: @StateContainer.myFine.IsPaid</li>
+    <li>Date Fine issued: @StateContainer.myFine.DateIssued</li>
+    </ol>
+    */
+}
+@if (StateContainer.foundUser && StateContainer.myFine.IsPaid == false)
+{
+    <br>
+    <button class="govuk-button" @onclick="gotoPayment"> Pay Now </button>
+}
+
+<br>
+<br>
+
 @if (StateContainer.startButtonPushed)
 {
     <div class="app-prose-scope">
@@ -78,31 +143,6 @@
 <br>
 <br>
 
-
-
-@if (StateContainer.foundUser)
-{
-    <ol>
-        <li>Fine ID: @StateContainer.myFine.FineID</li>
-        <li>Name: @StateContainer.myFine.FullName</li>
-        <li>Fine Amout: @StateContainer.myFine.AmountDue</li>
-        <li>Has the fine been paid: @StateContainer.myFine.IsPaid</li>
-        <li>Date Fine issued: @StateContainer.myFine.DateIssued</li>
-    </ol>
-}
-@if (StateContainer.foundUser && StateContainer.myFine.IsPaid == false)
-{
-    <br>
-    <br>
-    <button @onclick="gotoPayment"> Pay Now </button>
-}
-
-@if (StateContainer.foundUser && StateContainer.myFine.IsPaid == true)
-{
-    <br>
-    <br>
-    <h3>This fine has already been paid</h3>
-}
 @code {
 
     void pushStart(){
