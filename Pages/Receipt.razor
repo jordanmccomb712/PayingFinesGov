@@ -1,0 +1,46 @@
+@page "/payment_complete"
+@using System.Threading.Tasks
+
+<div style="background-color: #f2f2f2; padding: 20px;">
+    <h1>Transaction Completed</h1>
+
+    <p>Thank you for your payment. Your transaction has been completed successfully. Please keep note of your Reference number.</p>
+
+    <div class="card bg-light mb-3">
+        <div class="card-header"><b>Reference Number</b></div>
+        <div class="card-body">
+            <h5 class="card-title"><b>@ReferenceNum</b></h5>
+        </div>
+    </div>
+
+</div>
+
+<p><b>We have sent you a confirmation receipt.</b></p>
+
+@code {
+    private string ReferenceNum;
+
+    protected override Task OnInitializedAsync()
+    {
+        // Generate a random alphanumeric string of length 10
+        var random = new Random();
+        ReferenceNum = new string(
+            Enumerable.Repeat("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789", 10)
+                      .Select(s => s[random.Next(s.Length)])
+                      .ToArray());
+        return Task.CompletedTask;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
