@@ -1,3 +1,4 @@
+
 .gem-c-title__text {
     margin: 0;
     color:white;
@@ -32,8 +33,9 @@
     font-size: 2rem;
     line-height: 1.09375;
     display: block;
-    margin-top: 0;
-    margin-bottom: 30px;
+    margin-top: 27;
+    margin-bottom: 20px;
+    margin-left: 80px;
 }
 
 .govuk-\!-margin-top-0 {
@@ -83,10 +85,11 @@ h1 {
 
 
 .gem-c-inverse-header {
-    width: 100%;
+    width: 92%;
     background-color: #1d70b8;
     color: #fff;
-    margin-bottom: 30px;
+    margin-left: 100px;
+    margin-bottom: 50px;
     padding: 0 30px 30px;
     box-sizing: border-box;
 }
@@ -119,6 +122,36 @@ h1 {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     font-weight: 400;
-    font-size: 19px;
+    font-size: 26px;
     line-height: 1.1428571429;
+    margin-left: 100px;
+}
+
+.faqText {
+    width: 90%;
+    color: #0b0c0c;
+    font-family: "GDS Transport",arial,sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-weight: 400;
+    font-size: 26px;
+    line-height: 1.1428571429;
+    margin-left: 128px;
+}
+
+.govuk-button--start {
+    margin-left: 100px;
+    margin-top: 10px;
+}
+
+.govuk-button--secondary {
+    margin-left: 100px;
+    margin-top: 10px;
+}
+
+li {
+    margin-top: 30px;
+    margin-left: 20px;
+    margin-bottom: 30px;
+    font-weight: 700;
 }
